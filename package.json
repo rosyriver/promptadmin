@@ -1,8 +1,8 @@
 {
-  "name": "prompt-case-library",
+  "name": "prompt-vault",
   "private": true,
   "version": "1.0.0",
-  "description": "Prompt Case Library - 个人 Prompt 视觉资产管理器",
+  "description": "Prompt Vault - 本地优先的 Prompt 资产管理工具",
   "main": "electron/main.cjs",
   "type": "module",
   "scripts": {
