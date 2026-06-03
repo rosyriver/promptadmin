@@ -29,12 +29,15 @@ lerna-debug.log*
 # Claude
 .claude/
 
-# Deprecated
-_web-deprecated/node_modules
-_web-deprecated/dist
+# Deprecated / non-essential
+_web-deprecated/
 ui/
-ui/node_modules
-ui/dist
+需求.md
+
+# Template leftovers
+eslint.config.js
+public/icons.svg
+src/assets/
 
 # User data (never commit personal media or DB)
 *.local
