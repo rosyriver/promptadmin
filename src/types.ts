@@ -6,7 +6,7 @@ export interface ExtraImage {
 export interface PromptCase {
   id: string;
   mediaUrl: string;
-  mediaType: 'image' | 'video' | 'audio';
+  mediaType: 'image' | 'video' | 'audio' | 'text';
   thumbnailUrl?: string;
   fileKey?: string;
   extraImages?: ExtraImage[];

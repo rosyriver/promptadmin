@@ -25,7 +25,7 @@ export function usePromptCases() {
   const [cases, setCases] = useState<PromptCase[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [search, setSearch] = useState('');
-  const [mediaTypeFilter, setMediaTypeFilter] = useState<'all' | 'image' | 'video' | 'audio'>('all');
+  const [mediaTypeFilter, setMediaTypeFilter] = useState<'all' | 'image' | 'video' | 'audio' | 'text'>('all');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [showTrash, setShowTrash] = useState(false);
 

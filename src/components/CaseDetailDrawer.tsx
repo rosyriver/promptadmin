@@ -105,7 +105,7 @@ export function CaseDetailDrawer({ caseData, open, onClose, onCopy, onUpdate, on
         <div className="flex items-center justify-between px-5 py-4 border-b border-[#E4E4E7] shrink-0">
           <div className="flex items-center gap-2">
             <span className="text-xs px-2 py-0.5 bg-[#F4F4F5] text-[#71717A] rounded-md">
-              {c.mediaType === 'video' ? 'Video' : 'Image'}
+              {c.mediaType === 'video' ? 'Video' : c.mediaType === 'audio' ? 'Audio' : c.mediaType === 'text' ? 'Text' : 'Image'}
             </span>
             {c.model && (
               <span className="text-xs text-[#A1A1AA]">{c.model}</span>
@@ -126,6 +126,7 @@ export function CaseDetailDrawer({ caseData, open, onClose, onCopy, onUpdate, on
         </div>
 
         {/* Media preview */}
+        {c.mediaType !== 'text' && (
         <div className="shrink-0 bg-[#F4F4F5] relative group">
           {c.mediaType === 'video' ? (
             <video
@@ -142,7 +143,7 @@ export function CaseDetailDrawer({ caseData, open, onClose, onCopy, onUpdate, on
               className="w-full max-h-[300px] object-contain cursor-zoom-in hover:opacity-90 transition-opacity"
             />
           ) : (
-            <div className="w-full h-[200px] flex items-center justify-center bg-[#F4F4F5]">
+            <div className="w-full h-[200px] flex items-center justify-center">
               <audio src={resolvedUrl} controls className="w-full max-w-[300px]" />
             </div>
           )}
@@ -176,6 +177,7 @@ export function CaseDetailDrawer({ caseData, open, onClose, onCopy, onUpdate, on
             替换
           </button>
         </div>
+        )}
 
         {/* Extra images gallery */}
         {c.mediaType === 'image' && (

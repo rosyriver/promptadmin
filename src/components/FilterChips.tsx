@@ -3,8 +3,8 @@ import { Filter, GripVertical } from 'lucide-react';
 import { TagManager } from './TagManager';
 
 interface FilterChipsProps {
-  mediaTypeFilter: 'all' | 'image' | 'video' | 'audio';
-  onMediaTypeChange: (v: 'all' | 'image' | 'video' | 'audio') => void;
+  mediaTypeFilter: 'all' | 'image' | 'video' | 'audio' | 'text';
+  onMediaTypeChange: (v: 'all' | 'image' | 'video' | 'audio' | 'text') => void;
   selectedTags: string[];
   onToggleTag: (tag: string) => void;
   allTags: string[];
@@ -28,11 +28,12 @@ export function FilterChips({
   const dragOver = useRef<number | null>(null);
   const [dragging, setDragging] = useState(false);
 
-  const typeFilters: { key: 'all' | 'image' | 'video'; label: string }[] = [
+  const typeFilters: { key: 'all' | 'image' | 'video' | 'audio' | 'text'; label: string }[] = [
     { key: 'all', label: '全部' },
     { key: 'image', label: '图片' },
     { key: 'video', label: '视频' },
     { key: 'audio', label: '音频' },
+    { key: 'text', label: '文本' },
   ];
 
   const handleDragStart = (index: number) => {
@@ -85,8 +86,8 @@ export function FilterChips({
       <div className="w-px h-5 bg-[#E4E4E7] shrink-0" />
 
       {/* Scrollable tag row */}
-      <div className="flex-1 overflow-x-auto scrollbar-none">
-        <div className="flex items-center gap-1.5 min-w-max">
+      <div className="flex-1 overflow-y-auto max-h-[72px]">
+        <div className="flex items-center gap-1.5 flex-wrap">
           {selectedTags.length > 0 && (
             <button
               onClick={() => selectedTags.forEach(t => onToggleTag(t))}

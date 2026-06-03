@@ -118,15 +118,16 @@ export function CollectCaseModal({ open, onClose, onSave, tagSuggestions = [], m
   }, [handleMainFile, handleExtraFile]);
 
   const handleSubmit = async (continueAdding: boolean) => {
-    if (!mainUrl || !mediaType || !prompt.trim() || saving) return;
+    if (!prompt.trim() || saving) return;
     setSaving(true);
     try {
+      const finalMediaType = mediaType || 'text';
       // Store main file
       let fileKey: string | undefined;
       if (mainFile) {
         fileKey = crypto.randomUUID();
         if (window.electronAPI) {
-          fileKey = await window.electronAPI.saveMedia(fileKey, mainFile, mediaType);
+          fileKey = await window.electronAPI.saveMedia(fileKey, mainFile, finalMediaType);
         } else {
           await storeFile(fileKey, mainFile);
         }
@@ -149,8 +150,8 @@ export function CollectCaseModal({ open, onClose, onSave, tagSuggestions = [], m
       }
 
       onSave({
-        mediaUrl: mainUrl,
-        mediaType,
+        mediaUrl: mainUrl || '',
+        mediaType: finalMediaType,
         fileKey,
         extraImages: extraImages.length > 0 ? extraImages : undefined,
         prompt: prompt.trim(),
@@ -173,7 +174,7 @@ export function CollectCaseModal({ open, onClose, onSave, tagSuggestions = [], m
 
   if (!open) return null;
 
-  const isValid = mainUrl && mediaType && prompt.trim();
+  const isValid = prompt.trim();
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -192,7 +193,7 @@ export function CollectCaseModal({ open, onClose, onSave, tagSuggestions = [], m
           {/* Media upload */}
           <div>
             <label className="block text-sm font-medium text-[#18181B] mb-2">
-              上传媒体 <span className="text-red-400">*</span>
+              上传媒体 <span className="text-[#A1A1AA] font-normal">(可选)</span>
             </label>
             {mainUrl ? (
               <div className="space-y-2">
