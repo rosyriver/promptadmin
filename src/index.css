@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F6F6F4;
+  color: #18181B;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D4D8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA;
+}
+
+/* Toast animation */
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.toast-enter {
+  animation: toast-in 0.2s ease-out;
+}
+
+/* Drawer slide-in */
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.animate-slide-in {
+  animation: slide-in-right 0.25s ease-out;
+}
+
+/* Hide scrollbar */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Markdown content */
+.md-content h1 { font-size: 1.25rem; font-weight: 600; margin: 1rem 0 0.5rem; color: #18181B; }
+.md-content h2 { font-size: 1.1rem; font-weight: 600; margin: 0.75rem 0 0.5rem; color: #18181B; }
+.md-content h3 { font-size: 1rem; font-weight: 600; margin: 0.5rem 0 0.25rem; color: #18181B; }
+.md-content p { margin: 0.5rem 0; }
+.md-content ul, .md-content ol { margin: 0.5rem 0; padding-left: 1.5rem; }
+.md-content li { margin: 0.25rem 0; }
+.md-content code { font-size: 0.8rem; background: #F4F4F5; padding: 2px 6px; border-radius: 4px; }
+.md-content pre { background: #F4F4F5; padding: 0.75rem 1rem; border-radius: 8px; overflow-x: auto; margin: 0.5rem 0; }
+.md-content pre code { background: none; padding: 0; }
+.md-content blockquote { border-left: 3px solid #7C3AED; padding-left: 1rem; margin: 0.5rem 0; color: #71717A; }
+.md-content strong { font-weight: 600; }
+.md-content a { color: #7C3AED; text-decoration: underline; }
+.md-content hr { border: none; border-top: 1px solid #E4E4E7; margin: 1rem 0; }

@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Read(//d/rosyriver/project/**)",
+      "Bash(npx create-vite@latest promptadmin-temp --template react-ts)",
+      "Bash(cp -r D:/rosyriver/project/promptadmin-temp/* D:/rosyriver/project/promptadmin/)",
+      "Bash(cp D:/rosyriver/project/promptadmin-temp/.gitignore D:/rosyriver/project/promptadmin/)",
+      "Bash(rm -rf D:/rosyriver/project/promptadmin-temp)",
+      "Bash(npm install *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(npx tsc *)",
+      "Bash(npx vite *)",
+      "Bash(cp -r D:/rosyriver/project/promptadmin/src D:/rosyriver/project/promptadmin/ui/)",
+      "Bash(cp -r D:/rosyriver/project/promptadmin/public D:/rosyriver/project/promptadmin/ui/)",
+      "Bash(npx electron *)",
+      "Bash(set ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/)",
+      "Bash(npm config *)",
+      "Bash(ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" npm install electron --save-dev)",
+      "Bash(node node_modules/electron/install.js)",
+      "Bash(cat \"C:\\\\\\\\Users\\\\\\\\lee4\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\D--rosyriver-project-promptadmin\\\\\\\\e513133e-ed2f-47d0-8100-ce28b1fb180f\\\\\\\\tasks\\\\\\\\b6j2psx7y.output\")",
+      "Bash(node *)",
+      "Bash(export ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/)",
+      "Bash(mv electron/main.js electron/main.cjs)",
+      "Bash(mv electron/preload.js electron/preload.cjs)",
+      "Bash(mv ui/src .)",
+      "Bash(mv ui/electron .)",
+      "Bash(mv ui/package.json .)",
+      "Bash(mv ui/vite.config.ts .)",
+      "Bash(mv ui/tailwind.config.js .)",
+      "Bash(./node_modules/.bin/electron.cmd .)",
+      "Bash(dir \"%APPDATA%/prompt-case-library/media\")",
+      "Bash(dir E:\\\\backup\\\\Prompt *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
